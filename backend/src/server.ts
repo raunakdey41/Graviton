@@ -41,7 +41,7 @@ Output ONLY the JSON object without any markdown formatting.`;
       responseFormat: { type: 'json_object' }
     });
 
-    const content = response.choices?.[0]?.message?.content;
+    const content = response.choices?.[0]?.message?.content as string;
     let equations = [];
     if (content) {
       const parsed = JSON.parse(content);

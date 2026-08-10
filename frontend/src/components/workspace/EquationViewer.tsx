@@ -110,7 +110,8 @@ export const EquationViewer: React.FC = () => {
       setLoading(true);
       setAiError('');
       try {
-        const res = await fetch('http://localhost:5005/api/equations', {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5005';
+        const res = await fetch(`${API_URL}/api/equations`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ topic: sim.topic, subtopic: sim.subtopic })
