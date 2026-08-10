@@ -1,0 +1,10 @@
+# Root level gitignore for Graviton Fullstack Workspace
+**/node_modules/
+**/dist/
+**/build/
+**/*.local
+.env
+*.log
+.DS_Store
+.vscode/
+.gemini/
