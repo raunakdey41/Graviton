@@ -58,7 +58,7 @@ export const CircularMotionSim: React.FC = () => {
 
       // Draw Central Planet/Pivot
       drawSphere(ctx, centerX, centerY, 28, '#A0522D', '#4F46E5');
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 12px Inter';
       ctx.fillText('Center (Pivot)', centerX - 36, centerY + 45);
 

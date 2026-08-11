@@ -76,7 +76,7 @@ export const PhotoelectricSim: React.FC = () => {
       // Draw Cathode Target Metal Plate
       ctx.fillStyle = '#94A3B8';
       ctx.fillRect(180, 180, 40, 200);
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 12px Inter';
       ctx.fillText(`Cathode (Φ = ${workFunction_eV} eV)`, 140, 405);
 

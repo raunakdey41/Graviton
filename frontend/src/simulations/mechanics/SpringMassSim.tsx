@@ -103,7 +103,7 @@ export const SpringMassSim: React.FC = () => {
       ctx.strokeStyle = '#FFFFFF';
       ctx.lineWidth = 2;
       ctx.strokeRect(blockX - bw/2, blockY - bh/2, bw, bh);
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 13px Inter';
       ctx.fillText(`${m} kg`, blockX - 18, blockY + 5);
       ctx.restore();

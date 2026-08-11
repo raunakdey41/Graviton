@@ -86,7 +86,7 @@ export const FrictionSim: React.FC = () => {
       ctx.stroke();
 
       // Angle label
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 14px Inter';
       ctx.fillText(`θ = ${angleDeg}°`, rampBaseX + 45, rampBaseY - 15);
       ctx.restore();

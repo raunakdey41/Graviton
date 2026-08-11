@@ -74,7 +74,7 @@ export const drawArrow = (
   if (label) {
     ctx.font = 'bold 12px Inter, sans-serif';
     ctx.shadowBlur = 0;
-    ctx.fillStyle = '#f8fafc'; // light slate for visibility on dark canvas
+    ctx.fillStyle = '#1e293b'; // dark slate for visibility on light canvas
     ctx.fillText(label, targetX + 6, targetY + 4);
   }
   ctx.restore();

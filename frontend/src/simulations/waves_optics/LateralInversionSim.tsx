@@ -55,7 +55,7 @@ export const LateralInversionSim: React.FC = () => {
       ctx.textBaseline = 'middle';
       ctx.fillText('F', 0, 0);
       
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = '14px Inter';
       ctx.fillText(`Real Object`, 0, 120);
       ctx.restore();
@@ -73,7 +73,7 @@ export const LateralInversionSim: React.FC = () => {
 
       ctx.save();
       ctx.translate(imgX, cy);
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = '14px Inter';
       ctx.textAlign = 'center';
       ctx.fillText(`Virtual Image`, 0, 120);

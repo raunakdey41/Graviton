@@ -32,42 +32,44 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleSidebar }) => {
 
   return (
     <>
-      <header className="text-slate-100 h-16 border-b border-white/10 bg-space-900/90  px-4 flex items-center justify-between z-50 flex-shrink-0">
+      <header className="text-slate-100 min-h-[4rem] border-b border-white/10 bg-space-900/90 py-3 md:py-0 px-4 flex flex-col md:flex-row items-center justify-between z-50 flex-shrink-0 gap-3 md:gap-0">
         {/* Left Logo & Toggle */}
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={onToggleSidebar} 
-            className="md:hidden p-2 rounded-lg hover:bg-white/10 text-slate-100"
-            aria-label="Toggle Sidebar"
-          >
-            <BookOpen className="w-5 h-5" />
-          </button>
-          
-          <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => setCurrentSimId('free-fall')}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-stone-600 via-stone-600 to-amber-500 flex items-center justify-center shadow-lg shadow-stone-500/30 group-hover:scale-105 transition-transform duration-300">
-              <Atom className="w-6 h-6 text-white animate-[spin_10s_linear_infinite]" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
-                GRAV<span className="text-amber-400">ITON</span>
-                <span className="text-xs font-mono px-1.5 py-0.5 rounded bg-stone-500/20 text-stone-300 border border-stone-500/30 font-normal">LAB</span>
-              </span>
-              <span className="text-[10px] text-slate-100 tracking-wider uppercase font-medium hidden sm:inline-block">Interactive Physics Workspace</span>
+        <div className="flex items-center justify-between w-full md:w-auto gap-3">
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={onToggleSidebar} 
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 text-slate-100"
+              aria-label="Toggle Sidebar"
+            >
+              <BookOpen className="w-5 h-5" />
+            </button>
+            
+            <div className="flex items-center gap-2.5 group cursor-pointer" onClick={() => setCurrentSimId('free-fall')}>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-stone-600 via-stone-600 to-amber-500 flex items-center justify-center shadow-lg shadow-stone-500/30 group-hover:scale-105 transition-transform duration-300">
+                <Atom className="w-6 h-6 text-white animate-[spin_10s_linear_infinite]" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-heading text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+                  GRAV<span className="text-amber-400">ITON</span>
+                  <span className="text-xs font-mono px-1.5 py-0.5 rounded bg-stone-500/20 text-stone-300 border border-stone-500/30 font-normal">LAB</span>
+                </span>
+                <span className="text-[10px] text-slate-100 tracking-wider uppercase font-medium hidden sm:inline-block">Interactive Physics Workspace</span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Center Curriculum Selectors */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-2 w-full md:w-auto">
           {/* Board Selector */}
-          <div className="flex items-center bg-space-800/80 border border-white/10 rounded-xl p-1 px-2.5 shadow-sm">
-            <span className="text-xs text-slate-100 mr-2 font-medium hidden lg:inline">Board:</span>
-            <div className="flex gap-1">
+          <div className="flex items-center bg-space-800/80 border border-white/10 rounded-xl p-1 px-2 shadow-sm">
+            <span className="text-[10px] md:text-xs text-slate-100 mr-1.5 font-medium hidden lg:inline">Board:</span>
+            <div className="flex gap-0.5">
               {BOARDS.map(board => (
                 <button
                   key={board}
                   onClick={() => setActiveBoard(board)}
-                  className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all duration-200 ${
+                  className={`px-1.5 py-0.5 md:px-2.5 md:py-1 text-[10px] md:text-xs font-semibold rounded-lg transition-all duration-200 ${
                     activeBoard === board
                       ? 'bg-gradient-to-r from-stone-600 to-stone-500 text-white shadow-md shadow-stone-500/30 scale-102'
                       : 'text-slate-100 hover:text-white hover:bg-white/5'
@@ -80,14 +82,14 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleSidebar }) => {
           </div>
 
           {/* Grade Selector */}
-          <div className="hidden sm:flex items-center bg-space-800/80 border border-white/10 rounded-xl p-1 px-2.5 shadow-sm">
-            <span className="text-xs text-slate-100 mr-2 font-medium">Class:</span>
-            <div className="flex gap-1">
+          <div className="flex items-center bg-space-800/80 border border-white/10 rounded-xl p-1 px-2 shadow-sm">
+            <span className="text-[10px] md:text-xs text-slate-100 mr-1.5 font-medium hidden sm:inline">Class:</span>
+            <div className="flex gap-0.5">
               {GRADES.map(grade => (
                 <button
                   key={grade}
                   onClick={() => setActiveGrade(grade)}
-                  className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all duration-200 ${
+                  className={`px-1.5 py-0.5 md:px-2.5 md:py-1 text-[10px] md:text-xs font-semibold rounded-lg transition-all duration-200 ${
                     activeGrade === grade
                       ? 'bg-gradient-to-r from-amber-600 to-stone-500 text-white shadow-md shadow-amber-500/30'
                       : 'text-slate-100 hover:text-white hover:bg-white/5'

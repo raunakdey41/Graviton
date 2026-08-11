@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSimulationStore } from '../../store/useSimulationStore';
 import { drawGrid, drawArrow, drawLegend, drawSphere } from '../../utils/canvasUtils';
 
@@ -127,26 +127,26 @@ export const UniversalMotionSim: React.FC = () => {
         ref={canvasRef} 
         width={800} 
         height={600} 
-        className="w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-slate-900 shadow-inner"
+        className="w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-white shadow-inner"
       />
 
       {/* Live Kinematics HUD Overlay */}
-      <div className="absolute bottom-4 left-4 right-4 max-w-xl mx-auto bg-slate-800/90 shadow-xl border border-slate-700 rounded-2xl p-3 px-5 shadow-2xl backdrop-blur-md flex items-center justify-between gap-4 text-xs font-mono">
+      <div className="absolute bottom-4 left-4 right-4 max-w-xl mx-auto bg-white/95 shadow-xl border border-slate-200 rounded-2xl p-3 px-5 backdrop-blur-md flex items-center justify-between gap-4 text-xs font-mono">
         <div>
-          <div className="text-slate-400 font-sans font-bold mb-1">Time Elapsed</div>
-          <div className="text-lg font-extrabold text-white">{simState.time.toFixed(2)} s</div>
+          <div className="text-slate-500 font-sans font-bold mb-1">Time Elapsed</div>
+          <div className="text-lg font-extrabold text-slate-900">{simState.time.toFixed(2)} s</div>
         </div>
         <div>
-          <div className="text-slate-400 font-sans font-bold mb-1">Position (x)</div>
-          <div className="text-lg font-extrabold text-cyan-400">{simState.x.toFixed(1)} m</div>
+          <div className="text-slate-500 font-sans font-bold mb-1">Position (x)</div>
+          <div className="text-lg font-extrabold text-cyan-600">{simState.x.toFixed(1)} m</div>
         </div>
         <div>
-          <div className="text-slate-400 font-sans font-bold mb-1">Velocity (v)</div>
-          <div className="text-lg font-extrabold text-cyan-400">{simState.v.toFixed(1)} m/s</div>
+          <div className="text-slate-500 font-sans font-bold mb-1">Velocity (v)</div>
+          <div className="text-lg font-extrabold text-cyan-600">{simState.v.toFixed(1)} m/s</div>
         </div>
         <div>
-          <div className="text-slate-400 font-sans font-bold mb-1">Accel (a)</div>
-          <div className="text-lg font-extrabold text-amber-400">{simState.a.toFixed(1)} m/s²</div>
+          <div className="text-slate-500 font-sans font-bold mb-1">Accel (a)</div>
+          <div className="text-lg font-extrabold text-amber-600">{simState.a.toFixed(1)} m/s²</div>
         </div>
       </div>
     </div>

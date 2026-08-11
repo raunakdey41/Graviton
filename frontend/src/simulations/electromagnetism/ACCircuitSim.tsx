@@ -111,7 +111,7 @@ export const ACCircuitSim: React.FC = () => {
       ctx.lineTo(phasorX + 45 * Math.cos(w * t - phi), phasorY - 45 * Math.sin(w * t - phi));
       ctx.stroke();
 
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 11px Inter';
       ctx.fillText('Rotating Phasor Dial', phasorX - 55, phasorY - 78);
       ctx.restore();

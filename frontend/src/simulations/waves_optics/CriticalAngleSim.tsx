@@ -110,7 +110,7 @@ export const CriticalAngleSim: React.FC = () => {
       ctx.shadowBlur = 0;
 
       // Draw angles
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = '#000000';
       ctx.font = '12px Inter';
       ctx.fillText(`i = ${angleDeg.toFixed(1)}°`, cx - 50, cy + 30);
       if (criticalAngle) {

@@ -23,7 +23,7 @@ export const Workspace = () => {
       />
 
       {/* Workspace Main Grid */}
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden p-3 gap-3">
+      <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden p-3 gap-3">
         {/* Left Hierarchical Category Tree & Search */}
         <Sidebar 
           isOpen={isSidebarOpen} 
@@ -36,7 +36,7 @@ export const Workspace = () => {
         </main>
 
         {/* Right Multi-Tab Controls & Mathematics Engine */}
-        <aside className="w-full md:w-[380px] xl:w-[440px] flex-shrink-0 flex flex-col gap-2 overflow-hidden">
+        <aside className="w-full md:w-[380px] xl:w-[440px] flex-shrink-0 flex flex-col gap-2 min-h-[500px] md:min-h-0 md:overflow-hidden">
           {/* Tab Navigation Bar */}
           <div className="flex items-center bg-space-800 border border-white/10 rounded-2xl p-1 shadow-lg">
             <button

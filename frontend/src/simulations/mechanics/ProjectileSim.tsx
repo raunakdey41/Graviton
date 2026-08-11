@@ -84,7 +84,7 @@ export const ProjectileSim: React.FC = () => {
       ctx.fillStyle = '#A0522D';
       ctx.fillRect(0, groundY, width, height - groundY);
       ctx.font = 'bold 12px Inter';
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.fillText('Flat Artillery Firing Field (0 m elevation)', 80, groundY + 25);
 
       // Draw Cannon platform if height > 0

@@ -71,7 +71,7 @@ export const MagneticFieldSim: React.FC = () => {
       // Draw Particle
       const color = q_mC >= 0 ? '#800000' : '#D2691E';
       drawSphere(ctx, partX, partY, 16, color, color);
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 12px Inter';
       ctx.fillText(`${q_mC >= 0 ? '+' : ''}${q_mC}mC Ion`, partX + 20, partY + 5);
 

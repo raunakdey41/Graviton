@@ -155,7 +155,7 @@ export const RayOpticsSim: React.FC = () => {
       ctx.lineTo(objX - 5, objTopY + 5);
       ctx.lineTo(objX + 5, objTopY + 5);
       ctx.fill();
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 12px Inter';
       ctx.fillText(`Obj u=${u}cm`, objX - 40, objTopY - 15);
       ctx.restore();

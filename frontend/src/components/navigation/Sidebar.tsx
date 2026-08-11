@@ -51,13 +51,21 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   }, [activeBoard, activeGrade, filterMode, selectedTopic, searchQuery]);
 
   return (
-    <aside className={`
-      fixed md:static inset-y-0 left-0 z-40 w-72 text-slate-100 bg-space-900 border-r border-white/10 flex flex-col transition-transform duration-300 flex-shrink-0
-      ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-    `}>
-      {/* Search & Filter Header */}
-      <div className="p-4 border-b border-white/10 flex flex-col gap-3">
-        <div className="relative">
+    <>
+      {/* Mobile Backdrop */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm md:hidden"
+          onClick={onClose}
+        />
+      )}
+      <aside className={`
+        fixed md:static inset-y-0 left-0 z-40 w-72 text-slate-100 bg-space-900 border-r border-white/10 flex flex-col transition-transform duration-300 flex-shrink-0
+        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+      `}>
+        {/* Search & Filter Header */}
+        <div className="p-4 border-b border-white/10 flex flex-col gap-3">
+          <div className="relative">
           <Search className="w-4 h-4 text-slate-100 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input 
             type="text" 
@@ -198,5 +206,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         </p>
       </div>
     </aside>
+    </>
   );
 };

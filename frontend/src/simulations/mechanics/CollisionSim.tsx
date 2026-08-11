@@ -67,7 +67,7 @@ export const CollisionSim: React.FC = () => {
 
       // Draw Ball 1
       drawSphere(ctx, x1, centerY, rad1, '#8B4513', '#A0522D');
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 12px Inter';
       ctx.fillText(`${m1}kg (v₁=${v1.toFixed(1)})`, x1 - 35, centerY - rad1 - 10);
 

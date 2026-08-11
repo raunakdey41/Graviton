@@ -63,7 +63,7 @@ export const AlphaRadiationSim: React.FC = () => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
         ctx.fill();
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = '#000000';
         ctx.font = '10px sans-serif';
         ctx.fillText('α', p.x - 3, p.y + 3);
       });

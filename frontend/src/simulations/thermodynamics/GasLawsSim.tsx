@@ -80,7 +80,7 @@ export const GasLawsSim: React.FC = () => {
       // Draw Moving Piston Head on Right
       ctx.fillStyle = '#64748B';
       ctx.fillRect(chamberLeft + chamberWidth, chamberTop - 10, 30, chamberHeight + 20);
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = '#000000';
       ctx.font = 'bold 14px font-mono';
       ctx.fillText(`Piston Volume = ${V_L} L`, chamberLeft + 15, chamberTop - 18);
 

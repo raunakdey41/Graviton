@@ -174,34 +174,34 @@ export const FreeFallSim: React.FC = () => {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerLeave={handlePointerUp}
-        className={`w-full h-full object-cover max-w-4xl border border-slate-800 rounded-xl bg-slate-900 shadow-inner ${isDragging.current ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-white shadow-inner ${isDragging.current ? 'cursor-grabbing' : 'cursor-grab'}`}
       />
 
       <div className={`absolute left-4 right-4 max-w-xl mx-auto w-full transition-transform duration-500 ease-in-out ${showTelemetry ? 'bottom-4 translate-y-0' : 'bottom-4 translate-y-[calc(100%+1.2rem)]'}`}>
         {/* Toggle Button */}
         <button 
           onClick={() => setShowTelemetry(!showTelemetry)}
-          className="absolute -top-7 left-1/2 -translate-x-1/2 bg-slate-900/95 backdrop-blur-md border border-slate-700 border-b-0 rounded-t-xl px-5 py-1 text-[11px] font-bold text-slate-400 shadow-md hover:text-slate-200 transition-colors pointer-events-auto"
+          className="absolute -top-7 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md border border-slate-200 border-b-0 rounded-t-xl px-5 py-1 text-[11px] font-bold text-slate-500 shadow-md hover:text-slate-700 transition-colors pointer-events-auto"
         >
           {showTelemetry ? 'Hide Data' : 'Show Data'}
         </button>
 
         {/* Panel */}
-        <div className="w-full bg-slate-900/95 shadow-xl border border-slate-700 rounded-2xl p-3 px-5 backdrop-blur-md flex items-center justify-between gap-4 text-xs font-mono pointer-events-none">
+        <div className="w-full bg-white/95 shadow-xl border border-slate-200 rounded-2xl p-3 px-5 backdrop-blur-md flex items-center justify-between gap-4 text-xs font-mono pointer-events-none">
         <div>
-          <div className="text-slate-400 font-sans font-bold mb-1">Time Elapsed</div>
-          <div className="text-lg font-extrabold text-stone-400">{simState.time.toFixed(2)} s</div>
+          <div className="text-slate-500 font-sans font-bold mb-1">Time Elapsed</div>
+          <div className="text-lg font-extrabold text-slate-900">{simState.time.toFixed(2)} s</div>
         </div>
         <div>
-          <div className="text-slate-400 font-sans font-bold mb-1">Current Altitude</div>
-          <div className="text-lg font-extrabold text-amber-400">{currentH.toFixed(1)} m</div>
+          <div className="text-slate-500 font-sans font-bold mb-1">Current Altitude</div>
+          <div className="text-lg font-extrabold text-amber-600">{currentH.toFixed(1)} m</div>
         </div>
         <div className="flex-1 max-w-xs">
           <div className="flex justify-between text-[11px] mb-1 font-sans">
-            <span className="text-stone-400 font-bold">PE: {potEnergy.toFixed(0)} J</span>
-            <span className="text-amber-400 font-bold">KE: {kinEnergy.toFixed(0)} J</span>
+            <span className="text-stone-500 font-bold">PE: {potEnergy.toFixed(0)} J</span>
+            <span className="text-amber-600 font-bold">KE: {kinEnergy.toFixed(0)} J</span>
           </div>
-          <div className="h-2.5 w-full bg-slate-900 rounded-full overflow-hidden flex border border-slate-200">
+          <div className="h-2.5 w-full bg-slate-200 rounded-full overflow-hidden flex border border-slate-300">
             <div className="bg-stone-500 transition-all duration-100" style={{ width: `${Math.min(100, (potEnergy / (potEnergy + kinEnergy + 0.1)) * 100)}%` }} />
             <div className="bg-amber-400 transition-all duration-100" style={{ width: `${Math.min(100, (kinEnergy / (potEnergy + kinEnergy + 0.1)) * 100)}%` }} />
           </div>
