@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSimulationStore } from '../../store/useSimulationStore';
-import { drawGrid, drawArrow, drawLegend, drawSphere } from '../../utils/canvasUtils';
+import { drawGrid, drawArrow, drawLegend, drawSphere, getCanvasPoint } from '../../utils/canvasUtils';
 
 export const FreeFallSim: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -109,9 +109,7 @@ export const FreeFallSim: React.FC = () => {
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const { x, y } = getCanvasPoint(e, canvas);
 
     const maxH = parameters.height || 80;
     const m = parameters.mass || 5;
@@ -132,8 +130,7 @@ export const FreeFallSim: React.FC = () => {
     if (!isDragging.current) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const y = e.clientY - rect.top;
+    const { y } = getCanvasPoint(e, canvas);
 
     const groundY = canvas.height - 60;
     // We want the ball to be mapped to the new max height.
@@ -165,7 +162,7 @@ export const FreeFallSim: React.FC = () => {
   const kinEnergy = 0.5 * m * simState.v * simState.v;
 
   return (
-    <div className="w-full h-full relative flex flex-col items-center justify-center bg-slate-950">
+    <div className="w-full h-full relative flex flex-col items-center justify-center p-2 md:p-6 pb-20">
       <canvas 
         ref={canvasRef} 
         width={800} 
@@ -174,7 +171,7 @@ export const FreeFallSim: React.FC = () => {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerLeave={handlePointerUp}
-        className={`w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-white shadow-inner ${isDragging.current ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`w-full h-full object-contain border border-slate-200 rounded-xl bg-white shadow-inner ${isDragging.current ? 'cursor-grabbing' : 'cursor-grab'}`}
       />
 
       <div className={`absolute left-4 right-4 max-w-xl mx-auto w-full transition-transform duration-500 ease-in-out ${showTelemetry ? 'bottom-4 translate-y-0' : 'bottom-4 translate-y-[calc(100%+1.2rem)]'}`}>

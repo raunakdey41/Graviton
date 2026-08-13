@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useSimulationStore } from '../../store/useSimulationStore';
 import { CORE_SIMULATIONS } from '../../data/simulationsData';
-import { Search, ChevronDown, ChevronRight, Play, BookOpen, Layers } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, Play, BookOpen, Layers, Menu } from 'lucide-react';
 import type { Topic } from '../../types/simulation';
 
 const TOPICS: Topic[] = [
@@ -60,11 +60,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         />
       )}
       <aside className={`
-        fixed md:static inset-y-0 left-0 z-40 w-72 text-slate-100 bg-space-900 border-r border-white/10 flex flex-col transition-transform duration-300 flex-shrink-0
-        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        fixed md:static inset-y-0 left-0 z-40 text-slate-100 bg-space-900 flex flex-col transition-[width,transform] duration-300 ease-in-out flex-shrink-0 overflow-hidden min-w-0
+        ${isOpen ? 'translate-x-0 w-72 border-r border-white/10' : '-translate-x-full w-72 md:translate-x-0 md:w-0 border-r-0 border-white/0'}
       `}>
+        <div className="w-72 flex flex-col h-full flex-shrink-0">
         {/* Search & Filter Header */}
         <div className="p-4 border-b border-white/10 flex flex-col gap-3">
+          <div className="flex items-center justify-between">
+            <span className="font-heading font-bold text-white text-sm">Explore</span>
+            <button onClick={onClose} className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors hidden md:block focus:outline-none focus:ring-2 focus:ring-amber-500" aria-label="Hide left panel" title="Hide left panel">
+              <Menu className="w-4 h-4" />
+            </button>
+          </div>
           <div className="relative">
           <Search className="w-4 h-4 text-slate-100 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input 
@@ -195,7 +202,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         })}
       </div>
 
-      {/* Footer Info */}
       <div className="p-3.5 border-t border-white/10 bg-black/20 flex flex-col gap-1 text-[11px] text-slate-100">
         <div className="flex items-center justify-between font-semibold text-slate-100">
           <span>Curriculum Coverage</span>
@@ -205,6 +211,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           Strictly standardized for CBSE, ICSE and ISC textbook laboratories.
         </p>
       </div>
+        </div>
     </aside>
     </>
   );

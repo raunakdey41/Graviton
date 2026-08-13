@@ -70,7 +70,7 @@ export const SimulationCanvas: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-white shadow-xl/40 rounded-2xl border border-slate-200 overflow-hidden shadow-2xl relative group">
+    <div className="flex flex-col h-full w-full bg-white shadow-xl/40 rounded-2xl border border-slate-200 overflow-hidden shadow-2xl relative group">
       {/* Top Simulation Bar */}
       <div className="h-12 bg-white shadow-2xl border-b border-slate-200 px-4 flex items-center justify-between overflow-x-auto hide-scrollbar z-20 flex-shrink-0 backdrop-blur-md">
         <div className="flex items-center gap-2 min-w-0 pr-2">

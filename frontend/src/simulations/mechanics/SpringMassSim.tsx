@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSimulationStore } from '../../store/useSimulationStore';
-import { drawGrid, drawArrow, drawLegend } from '../../utils/canvasUtils';
+import { drawGrid, drawArrow, drawLegend , getCanvasPoint} from '../../utils/canvasUtils';
 
 export const SpringMassSim: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -217,7 +217,7 @@ export const SpringMassSim: React.FC = () => {
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerLeave={handlePointerUp}
-        className={`w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-white shadow-inner ${isDragging.current ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`w-full h-full object-contain  border border-slate-200 rounded-xl bg-white shadow-inner ${isDragging.current ? 'cursor-grabbing' : 'cursor-grab'}`}
       />
       
       <div className="absolute bottom-4 max-w-xl mx-auto w-full bg-white/95 shadow-xl border border-slate-200 rounded-2xl p-3.5 px-6 shadow-2xl backdrop-blur-md flex items-center justify-between font-mono text-xs pointer-events-none">

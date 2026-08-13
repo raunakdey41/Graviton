@@ -250,7 +250,7 @@ export const RayOpticsSim: React.FC = () => {
 
   return (
     <div className="w-full h-full relative flex flex-col items-center justify-center">
-      <canvas ref={canvasRef} width={800} height={600} className="w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-slate-900 shadow-inner" />
+      <canvas ref={canvasRef} width={800} height={600} className="w-full h-full object-contain  border border-slate-200 rounded-xl bg-slate-900 shadow-inner" />
     </div>
   );
 };

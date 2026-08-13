@@ -141,3 +141,29 @@ export const drawSphere = (
   ctx.fill();
   ctx.restore();
 };
+
+export const getCanvasPoint = (e: React.PointerEvent<HTMLCanvasElement>, canvas: HTMLCanvasElement) => {
+  const rect = canvas.getBoundingClientRect();
+  const domRatio = rect.width / rect.height;
+  const canvasRatio = canvas.width / canvas.height;
+  
+  let drawnWidth = rect.width;
+  let drawnHeight = rect.height;
+  
+  if (domRatio > canvasRatio) {
+    drawnWidth = rect.height * canvasRatio;
+  } else {
+    drawnHeight = rect.width / canvasRatio;
+  }
+  
+  const offsetX = (rect.width - drawnWidth) / 2;
+  const offsetY = (rect.height - drawnHeight) / 2;
+  
+  const px = e.clientX - rect.left - offsetX;
+  const py = e.clientY - rect.top - offsetY;
+  
+  const scaleX = canvas.width / drawnWidth;
+  const scaleY = canvas.height / drawnHeight;
+  
+  return { x: px * scaleX, y: py * scaleY };
+};

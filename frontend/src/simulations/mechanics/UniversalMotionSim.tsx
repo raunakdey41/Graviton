@@ -127,7 +127,7 @@ export const UniversalMotionSim: React.FC = () => {
         ref={canvasRef} 
         width={800} 
         height={600} 
-        className="w-full h-full object-cover max-w-4xl border border-slate-200 rounded-xl bg-white shadow-inner"
+        className="w-full h-full object-contain  border border-slate-200 rounded-xl bg-white shadow-inner"
       />
 
       {/* Live Kinematics HUD Overlay */}
